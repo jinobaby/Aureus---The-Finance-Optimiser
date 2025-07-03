@@ -48,7 +48,8 @@ function Home() {
                     </div>
 
                     <div className='home-container-nav-bottom-right'>
-
+                        <button style={{  backgroundColor: 'var(--color-gold)',color: 'var(--color-bg-card)'}} className='home-container-nav-bottom-button home-container-nav-bottom-button-get-started'>Get Started</button>
+                        <button style={{  backgroundColor: 'var(--color-bg-card)',color: 'var(--color-accent)'}} className='home-container-nav-bottom-button'>Sign In</button>
                     </div>
 
                 </div>
