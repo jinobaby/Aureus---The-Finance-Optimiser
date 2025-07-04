@@ -1,21 +1,38 @@
 :root {
-  --color-bg-main: #0A0A0F;        /* Main background */
-  --color-bg-card: #181924;        /* Card background */
-  --color-bg-secondary: #232434;   /* Secondary background */
-  --color-border: #2E2F3E;         /* Borders and dividers */
-  --color-accent: #7B5FFF;         /* Accent (purple glow, highlights) */
-  --color-blue: #3B82F6;           /* Blue (active, links, icons) */
-  --color-gold: #FFD36E;           /* Gold (level bar, highlights) */
-  --color-success: #4ADE80;        /* Success/positive (earnings, up arrows) */
-  --color-error: #F87171;          /* Error/negative (down arrows, alerts) */
-  --color-text-main: #FFFFFF;      /* Main text */
-  --color-text-secondary: #C7C9D9; /* Secondary text */
-  --color-nav-icon: #A1A1AA;       /* Inactive nav icons */
-  --color-nav-active: #BFAFFF;     /* Active nav icon glow */
-  --color-shadow: #1A1333;         /* Card shadow/glow */
-  --color-input-bg: #232434;       /* Input/search background */
-  --color-input-border: #35364A;   /* Input border */
-  --color-divider: #232434;        /* Divider lines */
+  --color-bg-main: #0A0A0F;
+  /* Main background */
+  --color-bg-card: #181924;
+  /* Card background */
+  --color-bg-secondary: #232434;
+  /* Secondary background */
+  --color-border: #2E2F3E;
+  /* Borders and dividers */
+  --color-accent: #7B5FFF;
+  /* Accent (purple glow, highlights) */
+  --color-blue: #3B82F6;
+  /* Blue (active, links, icons) */
+  --color-gold: #FFD36E;
+  /* Gold (level bar, highlights) */
+  --color-success: #4ADE80;
+  /* Success/positive (earnings, up arrows) */
+  --color-error: #F87171;
+  /* Error/negative (down arrows, alerts) */
+  --color-text-main: #FFFFFF;
+  /* Main text */
+  --color-text-secondary: #C7C9D9;
+  /* Secondary text */
+  --color-nav-icon: #A1A1AA;
+  /* Inactive nav icons */
+  --color-nav-active: #BFAFFF;
+  /* Active nav icon glow */
+  --color-shadow: #1A1333;
+  /* Card shadow/glow */
+  --color-input-bg: #232434;
+  /* Input/search background */
+  --color-input-border: #35364A;
+  /* Input border */
+  --color-divider: #232434;
+  /* Divider lines */
 }
 
 * {
@@ -36,6 +53,8 @@
 }
 
 .home-container-nav-top {
+  display: flex;
+  align-items: center;
   height: 100px;
   width: 100%;
   border-bottom: 2px solid var(--color-border);
@@ -48,12 +67,13 @@
   width: 100%;
   border-bottom: 2px solid var(--color-border);
 }
+
 .home-container-nav-bottom-left {
   display: flex;
   flex: 1;
   height: 100%;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
 }
 
@@ -84,7 +104,7 @@
   color: var(--color-text-main);
 }
 
-.icon-text-home{
+.icon-text-home {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -97,7 +117,7 @@
 }
 
 .icon-text-home svg {
-  transition:  0.2s, filter 0.2s;
+  transition: 0.2s, filter 0.2s;
   color: var(--color-text-main);
 }
 
@@ -112,13 +132,16 @@
   filter: drop-shadow(0 0 8px var(--color-accent));
 }
 
-.home-container-main{
+.home-container-main {
   background-color: var(--color-bg-secondary);
   height: 100vh;
   width: 100%;
 }
 
 .home-container-nav-bottom-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   padding: 10px 20px;
   border-radius: 38px;
@@ -126,13 +149,73 @@
   font-weight: 400;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.8s;
-}.home-container-nav-bottom-button:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text-main);
+}
+
+.home-container-nav-bottom-button-specific:hover {
   box-shadow: 0px 1px 18px var(--color-accent);
   transform: scale(1.01);
   transition: background-color 0.2s, transform 1s;
 }
-.home-container-nav-bottom-button-get-started:hover {
+
+.home-container-nav-bottom-button-golden-effect:hover {
   box-shadow: 0px 1px 18px var(--color-gold);
   transform: scale(1.01);
   transition: background-color 0.2s, transform 1s;
+}
+
+.nav-top-left {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex: 1;
+}
+
+.nav-top-center {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-top-right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: end;
+  flex: 1;
+  background-color: var(--color-nav-active);
+}
+
+.nav-top-center-search-input {
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-text-secondary);
+  border-radius: 38px;
+  padding: 16px 12px;
+  padding-left: 40px;
+  font-family: 'Ranade', sans-serif;
+  font-weight: 600;
+  width: 300px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.MagnifyingGlass {
+  position: absolute;
+  left: 41%;
+  top: 5.8%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+.nav-top-center-search-input:focus {
+  outline: none;
+  border: none;
 }

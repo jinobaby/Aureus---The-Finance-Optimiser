@@ -25,9 +25,20 @@ const Book = (props) => (
 )
 
 const Chat = (props) => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8" {...props}>
-    <path fill="currentColor" d="M0 0v5l1-1h1V1h3V0H0zm3 2v4h4l1 1V2H3z"></path>
-</svg>
-    )
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8" {...props}>
+        <path fill="currentColor" d="M0 0v5l1-1h1V1h3V0H0zm3 2v4h4l1 1V2H3z"></path>
+    </svg>
+)
 
-export { HomeIcon, Dollar, Menu, Book, Chat };
+const Crown = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -4 24 24" {...props}>
+        <path fill="currentColor" d="M2.776 5.106L3.648 11h12.736l.867-5.98l-3.493 3.02l-3.755-4.827l-3.909 4.811l-3.318-2.918zm10.038-1.537l-.078.067l.141.014l1.167 1.499l1.437-1.242l.14.014l-.062-.082l2.413-2.086a1 1 0 0 1 1.643.9L18.115 13H1.922L.399 2.7a1 1 0 0 1 1.65-.898L4.35 3.827l-.05.06l.109-.008l1.444 1.27l1.212-1.493l.109-.009l-.06-.052L9.245.976a1 1 0 0 1 1.565.017l2.005 2.576zM2 14h16v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"></path>
+    </svg>
+)
+
+const MagnifyingGlass = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8" {...props}>
+        <path fill="currentColor" d="M3.5 0C1.57 0 0 1.57 0 3.5S1.57 7 3.5 7c.59 0 1.17-.14 1.66-.41a1 1 0 0 0 .13.13l1 1a1.02 1.02 0 1 0 1.44-1.44l-1-1a1 1 0 0 0-.16-.13c.27-.49.44-1.06.44-1.66c0-1.93-1.57-3.5-3.5-3.5zm0 1C4.89 1 6 2.11 6 3.5c0 .66-.24 1.27-.66 1.72l-.03.03a1 1 0 0 0-.13.13c-.44.4-1.04.63-1.69.63c-1.39 0-2.5-1.11-2.5-2.5s1.11-2.5 2.5-2.5z"></path>
+    </svg>
+)
+export { HomeIcon, Dollar, Menu, Book, Chat, Crown, MagnifyingGlass };
