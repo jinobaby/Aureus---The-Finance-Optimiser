@@ -1,7 +1,7 @@
 import React from 'react'
 import '../index.css'
 import { Link } from 'react-router-dom'
-import LandingPageNav from '../components/icons/Navbars/LandingPagenav';
+import LandingPageNav from '../components/Navbars/LandingPagenav';
 
 function Home() {
 
