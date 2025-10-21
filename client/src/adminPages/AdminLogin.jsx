@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { AdminLoginFun } from '../redux/AdminSlice'
+import { adminLogin } from '../services/adminAPI'
 
 function AdminLogin() {
     const [formData, setFormData] = useState({
@@ -54,22 +55,18 @@ function AdminLogin() {
         setIsLoading(true)
 
         try {
-            // Simulate API call - replace with actual adminApi.login(formData)
-            await new Promise(resolve => setTimeout(resolve, 1500))
-            
-            // Mock successful login response
-            const mockResponse = {
-                data: {
-                    Token: 'mock-admin-token',
-                    Id: 'admin-123'
-                }
+            const response = await adminLogin(formData)
+
+            if (response.data.Token && response.data.Id) {
+                dispatch(AdminLoginFun(response.data))
+                localStorage.setItem('adminEmail', formData.email)
+                navigate('/Admin')
+            } else {
+                setErrors({ submit: 'Invalid response from server.' })
             }
-            
-            dispatch(AdminLoginFun(mockResponse.data))
-            localStorage.setItem('adminEmail', formData.email)
-            navigate('/Admin')
-        } catch {
-            setErrors({ submit: 'Invalid credentials. Please try again.' })
+        } catch (error) {
+            const errorMessage = error.response?.data?.message || 'Invalid credentials. Please try again.'
+            setErrors({ submit: errorMessage })
         } finally {
             setIsLoading(false)
         }

@@ -1,12 +1,16 @@
-import { AdminRequest } from '../axios/AxiosCreate';
+import { basicRequest } from '../axios/AxiosCreate';
 
-export const adminApi = async (data) => {
+export const adminLogin = async (data) => {
     try {
-        var response = await AdminRequest.post('/Admin/Admin-login', data)
+        var response = await basicRequest.post('/Admin/Admin-login', {
+            adminEmail: data.email,
+            adminPassword: data.password
+        })
         return response;
-    } 
+    }
     catch (error) {
-        console.error("Error in adminApi:", error);
+        console.error("Error in adminLogin:", error);
+        throw error;
     }
 }
 
